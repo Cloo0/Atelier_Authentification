@@ -1,4 +1,4 @@
 AuthName "Accès protégé"
 AuthType Basic
-AuthUserFile /home/delanoy/www/.htpasswd
+AuthUserFile /home/delanoy/www/atelier1/.htpasswd
 Require valid-user
