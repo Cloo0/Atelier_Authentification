@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification simple du username et de son password.
     // Si ok alors on initialise le cookie sur le poste de l'utilisateur 
     if ($username === bin2hex($username) && $password === bin2hex($password)) {
-        setcookie('authToken', bin2hex($username)', time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 minute (60 secondes) 
+        setcookie('authToken', bin2hex($username), time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 minute (60 secondes) 
         header('Location: page_admin.php'); // L'utilisateur est dirigé vers la page home.php
         exit();
     } else {
