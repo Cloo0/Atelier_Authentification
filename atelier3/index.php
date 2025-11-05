@@ -3,7 +3,7 @@
 session_start();
 if(!isset($_SESSION['viewcount']))
 {
-    $_SESSION['viewcount'] = 1;}
+    $_SESSION['viewcount'] = 1;
 }
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
