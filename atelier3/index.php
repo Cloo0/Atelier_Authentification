@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $username;
 
         header('Location: page_user.php');
+        exit();
     }  
     else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
