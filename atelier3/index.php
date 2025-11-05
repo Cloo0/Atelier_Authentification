@@ -2,7 +2,6 @@
 // Démarre la session
 session_start();
 $_SESSION['viewcount'] = 1;
-$_SESSION['viewcount']++;
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     header('Location: page_admin.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
@@ -19,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Stocker les informations utilisateur dans la session
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['viewcount']++;
 
 
         // Rediriger vers la page protégée
@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === 'user' && $password === 'utilisateur') {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['viewcount']++;
+
 
         header('Location: page_user.php');
         exit();
